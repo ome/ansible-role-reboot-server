@@ -4,4 +4,4 @@
 - include: reboot-if-kernel-upgraded.yml
 
 - include: reboot-server.yml
-  when: "{{ reboot_server_needed | default(reboot_server_always) }}"
+  when: "reboot_server_needed | default(reboot_server_always)"
