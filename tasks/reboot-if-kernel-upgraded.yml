@@ -13,6 +13,9 @@
   register: latest_kernel_version
   check_mode: no
   changed_when: False
+  # Ignore ansible-lint warning about using rpm (this is just a query)
+  tags:
+  - skip_ansible_lint
 
 - name: reboot | check if reboot needed
   set_fact:
