@@ -16,4 +16,4 @@
     port: "{{ ansible_port | default(22) }}"
     state: "started"
     timeout: "{{ reboot_server_timeout }}"
-  when: "{{ reboot_server_timeout > 0 }}"
+  when: "reboot_server_timeout > 0"
