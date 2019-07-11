@@ -1,6 +1,9 @@
 Reboot Server
 =============
 
+[![Build Status](https://travis-ci.org/ome/ansible-role-reboot-server.svg)](https://travis-ci.org/ome/ansible-role-reboot-server)
+[![Ansible Role](https://img.shields.io/ansible/role/41991.svg)](https://galaxy.ansible.com/ome/reboot_server/)
+
 Reboot a server, optionally wait for it to return
 
 If `reboot_server_timeout > 0` then wait for server to start.

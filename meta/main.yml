@@ -8,6 +8,7 @@ galaxy_info:
   - name: EL
     versions:
     - 7
+  role_name: reboot_server
   galaxy_tags: []
 
 dependencies: []
