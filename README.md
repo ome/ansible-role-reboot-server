@@ -1,7 +1,7 @@
 Reboot Server
 =============
 
-[![Build Status](https://travis-ci.org/ome/ansible-role-reboot-server.svg)](https://travis-ci.org/ome/ansible-role-reboot-server)
+[![Actions Status](https://github.com/ome/ansible-role-reboot-server/workflows/Molecule/badge.svg)](https://github.com/ome/ansible-role-reboot-server/actions)
 [![Ansible Role](https://img.shields.io/ansible/role/41991.svg)](https://galaxy.ansible.com/ome/reboot_server/)
 
 Reboot a server, optionally wait for it to return
