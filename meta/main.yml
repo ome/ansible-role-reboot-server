@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: ome-devel@lists.openmicroscopy.org.uk
   description: Reboot a server, optionally wait for it to return
@@ -5,9 +6,9 @@ galaxy_info:
   license: BSD
   min_ansible_version: 2.2
   platforms:
-  - name: EL
-    versions:
-    - 7
+    - name: EL
+      versions:
+        - 7
   role_name: reboot_server
   galaxy_tags: []
 

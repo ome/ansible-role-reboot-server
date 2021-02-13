@@ -1,12 +1,14 @@
 ---
 # https://support.ansible.com/hc/en-us/articles/201958037-Reboot-a-server-and-wait-for-it-to-come-back
 - name: reboot | asynchronous reboot
-  become: yes
-  shell: "sleep {{ reboot_server_shutdown_delay }} && shutdown -r now 'Rebooting (Ansible)'"
+  become: true
+  shell: >-
+    sleep {{ reboot_server_shutdown_delay }} &&
+    shutdown -r now 'Rebooting (Ansible)'
   async: 1
   poll: 0
-  ignore_errors: False
-  changed_when: True
+  ignore_errors: false
+  changed_when: true
 
 - name: reboot | wait for server
   delegate_to: "{{ reboot_server_delegate }}"

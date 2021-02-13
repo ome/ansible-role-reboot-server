@@ -3,7 +3,7 @@
 
 # If True unconditionally reboot the server, otherwise only reboot if the
 # kernel has changed
-reboot_server_always: False
+reboot_server_always: false
 
 # Run the reboot check from this node
 reboot_server_delegate: localhost
