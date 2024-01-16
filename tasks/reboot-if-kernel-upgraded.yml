@@ -21,10 +21,11 @@
 
 - name: reboot | check if reboot needed
   ansible.builtin.set_fact:
-    reboot_server_needed: >-
-      {{ running_kernel_version.stdout != latest_kernel_version.stdout }}
+     reboot_server_needed: >-
+       {{ running_kernel_version.stdout != latest_kernel_version.stdout }}
 
-- ansible.builtin.debug:
+- name: Check status when reboot is needed
+  ansible.builtin.debug:
     msg: >-
       Reboot needed (kernel): Current:{{ running_kernel_version.stdout }}
       Latest:{{ latest_kernel_version.stdout }}
