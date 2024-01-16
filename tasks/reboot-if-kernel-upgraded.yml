@@ -17,7 +17,7 @@
   changed_when: false
   # Ignore ansible-lint warning about using rpm (this is just a query)
   tags:
-  - skip_ansible_lint
+     - skip_ansible_lint
 
 - name: reboot | check if reboot needed
   ansible.builtin.set_fact:
