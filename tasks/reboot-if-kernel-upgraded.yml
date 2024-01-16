@@ -26,7 +26,7 @@
 
 - name: Check status when reboot is needed
   ansible.builtin.debug:
-    msg: >-
+     msg: >-
       Reboot needed (kernel): Current:{{ running_kernel_version.stdout }}
       Latest:{{ latest_kernel_version.stdout }}
   when: "reboot_server_needed"
