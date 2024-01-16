@@ -12,5 +12,3 @@ galaxy_info:
   namespace: ome
   role_name: reboot_server
   galaxy_tags: []
-
-dependencies: []
