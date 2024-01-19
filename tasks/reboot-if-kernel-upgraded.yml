@@ -2,14 +2,14 @@
 # Reboot a server if the running kernel is older than the latest installed
 
 - name: reboot | current running kernel
-  command: uname -r
+  ansible.builtin.command: uname -r
   register: running_kernel_version
   check_mode: false
   changed_when: false
 
 # http://serverfault.com/a/601432
 - name: reboot | latest installed kernel
-  shell: >-
+  ansible.builtin.shell: >-
     rpm -q kernel --qf '%{BUILDTIME} %{VERSION}-%{RELEASE}.%{ARCH}\n' |
     tail -n 1 | cut -f 2 -d ' '
   register: latest_kernel_version
@@ -17,15 +17,16 @@
   changed_when: false
   # Ignore ansible-lint warning about using rpm (this is just a query)
   tags:
-  - skip_ansible_lint
+     - skip_ansible_lint
 
 - name: reboot | check if reboot needed
-  set_fact:
-    reboot_server_needed: >-
-      {{ running_kernel_version.stdout != latest_kernel_version.stdout }}
+  ansible.builtin.set_fact:
+     reboot_server_needed: >-
+       {{ running_kernel_version.stdout != latest_kernel_version.stdout }}
 
-- debug:
-    msg: >-
+- name: Check status when reboot is needed
+  ansible.builtin.debug:
+     msg: >-
       Reboot needed (kernel): Current:{{ running_kernel_version.stdout }}
       Latest:{{ latest_kernel_version.stdout }}
   when: "reboot_server_needed"
