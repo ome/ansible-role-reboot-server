@@ -2,8 +2,8 @@
 # tasks file for roles/reboot-server
 
 - name: Include reboot-if-kernel-upgraded.yml
-  ansible.builtin.include: reboot-if-kernel-upgraded.yml
+  ansible.builtin.import_tasks: reboot-if-kernel-upgraded.yml
 
 - name: Include reboot-server.yml
-  ansible.builtin.include: reboot-server.yml
+  ansible.builtin.include_tasks: reboot-server.yml
   when: "reboot_server_needed | default(reboot_server_always)"

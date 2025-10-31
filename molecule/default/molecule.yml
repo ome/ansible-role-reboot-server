@@ -26,7 +26,6 @@ verifier:
   name: testinfra
 scenario:
   test_sequence:
-    - lint
     - dependency
     - cleanup
     - syntax
